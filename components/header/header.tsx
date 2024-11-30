@@ -1,6 +1,7 @@
 import React from 'react'
 import HeaderLogo from './header-logo'
 import Navigation from './navigation'
+import MobileMenu from './mobile-menu'
 
 const Header = () => {
   return (
@@ -12,6 +13,9 @@ const Header = () => {
                 <div className='flex items-center lg:gap-x-12'>
                     <HeaderLogo />
                     <Navigation />
+                    <div className='block lg:hidden'>
+                        <MobileMenu />
+                    </div>
                 </div>
             </div>
         </nav>

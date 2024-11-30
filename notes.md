@@ -24,3 +24,6 @@
 
 ## HEADER
 - add to layout
+- set the logo and header
+- after header logo go with navigation
+- add nev links
