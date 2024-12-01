@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { FiMenu, FiX } from 'react-icons/fi';
 import NavLink from './nav-link';
+import HeaderLogo from './header-logo';
+import MobileLogo from './mobile-logo';
 
 const MobileMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,8 +23,12 @@ const MobileMenu: React.FC = () => {
       label: 'Overview',
     },
     {
-      href: `${basePath}/categories`, // Dynamic categories route
-      label: 'Categories',
+      href: `${basePath}/food`, // Dynamic categories route
+      label: 'Food',
+    },
+    {
+      href: `${basePath}/settings`, // Dynamic categories route
+      label: 'Settings',
     },
   ];
 
@@ -31,7 +37,7 @@ const MobileMenu: React.FC = () => {
       {/* Menu Button */}
       <button
         onClick={toggleMenu}
-        className="z-50  bg-gray-100 text-gray-800 rounded-full p-2 shadow-lg transition-transform duration-300"
+        className="z-50  bg-gray-900 text-gray-100 rounded-full p-2 shadow-lg transition-transform duration-300"
       >
         {isOpen ? (
           <FiX className="h-6 w-6 transition-transform duration-300" />
@@ -48,10 +54,7 @@ const MobileMenu: React.FC = () => {
       >
         {/* Logo Section */}
         <div className="flex items-center justify-between p-4 border-b border-gray-200">
-          <h1 className="text-xl font-bold text-gray-800">Logo</h1>
-          <button onClick={toggleMenu} className="text-gray-800">
-            <FiX className="h-6 w-6" />
-          </button>
+          <MobileLogo />    
         </div>
 
         {/* Links Section */}
@@ -63,7 +66,7 @@ const MobileMenu: React.FC = () => {
 
         {/* Footer Section */}
         <footer className="absolute bottom-4 left-0 right-0 p-4 text-center text-sm text-gray-500 border-t border-gray-200">
-          &copy; {new Date().getFullYear()} Your Company
+          &copy; {new Date().getFullYear()} Fuel&Burn
         </footer>
       </div>
     </div>

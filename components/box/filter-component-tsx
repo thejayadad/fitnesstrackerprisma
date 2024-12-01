@@ -1,0 +1,58 @@
+import React from 'react';
+
+interface FilterProps {
+  selectedYear: string;
+  selectedMonth: string;
+  onYearChange: (year: string) => void;
+  onMonthChange: (month: string) => void;
+}
+
+const Filter: React.FC<FilterProps> = ({ selectedYear, selectedMonth, onYearChange, onMonthChange }) => {
+  const years = Array.from({ length: 5 }, (_, i) => (new Date().getFullYear() - i).toString());
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+
+  return (
+    <div style={{ display: 'flex', gap: '16px', marginBottom: '16px' }}>
+      <select
+        value={selectedYear}
+        onChange={(e) => onYearChange(e.target.value)}
+        style={{ padding: '8px', border: '1px solid #ccc', borderRadius: '4px' }}
+      >
+        <option value="">Select Year</option>
+        {years.map((year) => (
+          <option key={year} value={year}>
+            {year}
+          </option>
+        ))}
+      </select>
+
+      <select
+        value={selectedMonth}
+        onChange={(e) => onMonthChange(e.target.value)}
+        style={{ padding: '8px', border: '1px solid #ccc', borderRadius: '4px' }}
+      >
+        <option value="">Select Month</option>
+        {months.map((month, index) => (
+          <option key={month} value={index + 1}>
+            {month}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};
+
+export default Filter;

@@ -17,13 +17,17 @@ const Navigation: React.FC = () => {
       label: 'Overview',
     },
     {
-      href: `${basePath}/categories`, // Dynamic categories route
-      label: 'Categories',
+      href: `${basePath}/food`, // Dynamic categories route
+      label: 'Food',
+    },
+    {
+      href: `${basePath}/settings`, // Dynamic categories route
+      label: 'Settings',
     },
   ];
 
   return (
-    <div className="hidden lg:flex items-center gap-x-2 overflow-x-auto">
+    <div className="hidden md:flex md:ml-2 items-center gap-x-2 overflow-x-auto">
       {routes.map((route) => {
         const isActive = pathname === route.href;
 
@@ -32,7 +36,6 @@ const Navigation: React.FC = () => {
             key={route.href}
             href={route.href}
             label={route.label}
-            isActive={isActive}
           />
         );
       })}

@@ -14,6 +14,7 @@
 - npx prisma init
 - vercel setup
 - npm exec prisma migrate dev
+- *** drop database - npx prisma migrate reset
 - lib
 
 ## LANDING SETUP BRING IN AUTH
@@ -27,3 +28,6 @@
 - set the logo and header
 - after header logo go with navigation
 - add nev links
+- setup the mobile
+- build out the welcome message
+
